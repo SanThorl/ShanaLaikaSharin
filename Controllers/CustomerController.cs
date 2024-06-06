@@ -13,7 +13,7 @@ public class CustomerController : Controller
         _db = db;
     }
 
-    [ActionName("Index")]
+    [ActionName("List")]
     public IActionResult Get()
     {
         List<CustomerModel> Customerlst = _db.Customers.ToList();
