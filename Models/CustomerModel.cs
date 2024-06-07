@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Webmvc.Models;
+namespace Webmvc.Models
+{
 [Table("Tbl_Customer")]
 public class CustomerModel
 {
@@ -11,4 +12,5 @@ public class CustomerModel
     public string PhoneNo { get; set; }
     public DateTime DateOfBirth { get; set; }
     public string Gender { get; set; }
+}
 }

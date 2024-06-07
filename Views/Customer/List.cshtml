@@ -4,7 +4,7 @@
     int count = 1;
 }
 <h3>Customers</h3>
-<table>
+<table class="table">
     <thead>
         <tr>
             <th></th>
@@ -20,8 +20,8 @@
         {
             <tr>
                 <td>
-                    <a href="" class="btn btn-outline-warning">Edit</a>
-                    <a href="" class="btn btn-danger">Delete</a>
+                    <a href="Customer/Edit/@item.CustomerId" class="btn btn-outline-warning">Edit</a>
+                    <a href="" Customer /Delete/@item.CustomerId"" class="btn btn-danger">Delete</a>
                 </td>
                 <td scope="row">@(++count)</td>
                 <td scope="row">@item.CustomerName</td>

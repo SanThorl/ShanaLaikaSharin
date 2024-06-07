@@ -17,6 +17,65 @@ public class CustomerController : Controller
     public IActionResult Get()
     {
         List<CustomerModel> Customerlst = _db.Customers.ToList();
-        return View("Index", Customerlst);
+        return View("List", Customerlst);
+    }
+
+    [ActionName("Edit")]
+    public IActionResult Edit(int id)
+    {
+        CustomerModel item = _db.Customers.FirstOrDefault(x => x.CustomerId == id)!;
+        if (item is null)
+        {
+            return Redirect("/ Customer");
+        }
+
+        return View("Edit", item);
+    }
+
+    [ActionName("Create")]
+    public IActionResult Create()
+    {
+        return View("Save");
+    }
+
+    [HttpPost]
+    [ActionName("Save")]
+    public IActionResult Create(CustomerModel model)
+    {
+        _db.Customers.Add(model);
+        _db.SaveChanges();
+        return Redirect("/Customer");
+    }
+
+    [HttpPost]
+    [ActionName("Update")]
+    public IActionResult Update(int id, CustomerModel model)
+    {
+        var item = _db.Customers.FirstOrDefault(x => x.CustomerId == id);
+        if (item is null)
+        {
+            return Redirect("/Customer");
+        }
+        item.CustomerName = model.CustomerName;
+        item.PhoneNo = model.PhoneNo;
+        item.DateOfBirth = model.DateOfBirth;
+        item.Gender = model.Gender;
+
+        _db.SaveChanges();
+        return Redirect("/Customer");
+    }
+
+    [HttpDelete]
+    [ActionName("Delete")]
+    public IActionResult Delete(int id)
+    {
+        var item = _db.Customers.FirstOrDefault(x => x.CustomerId == id);
+        if (item is null)
+        {
+            return Redirect("/Customer");
+        }
+        _db.Customers.Remove(item);
+        _db.SaveChanges();
+        return Redirect("/Customer");
     }
 }
