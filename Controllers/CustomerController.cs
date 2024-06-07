@@ -26,7 +26,7 @@ public class CustomerController : Controller
         CustomerModel item = _db.Customers.FirstOrDefault(x => x.CustomerId == id)!;
         if (item is null)
         {
-            return Redirect("/ Customer");
+            return Redirect("List");
         }
 
         return View("Edit", item);
@@ -40,11 +40,11 @@ public class CustomerController : Controller
 
     [HttpPost]
     [ActionName("Save")]
-    public IActionResult Create(CustomerModel model)
+    public IActionResult Save(CustomerModel model)
     {
         _db.Customers.Add(model);
         _db.SaveChanges();
-        return Redirect("/Customer");
+        return Redirect("List");
     }
 
     [HttpPost]
@@ -54,7 +54,7 @@ public class CustomerController : Controller
         var item = _db.Customers.FirstOrDefault(x => x.CustomerId == id);
         if (item is null)
         {
-            return Redirect("/Customer");
+            return Redirect("List");
         }
         item.CustomerName = model.CustomerName;
         item.PhoneNo = model.PhoneNo;
@@ -62,7 +62,7 @@ public class CustomerController : Controller
         item.Gender = model.Gender;
 
         _db.SaveChanges();
-        return Redirect("/Customer");
+        return Redirect("/Customer/List");
     }
 
     [HttpDelete]
@@ -72,10 +72,10 @@ public class CustomerController : Controller
         var item = _db.Customers.FirstOrDefault(x => x.CustomerId == id);
         if (item is null)
         {
-            return Redirect("/Customer");
+            return Redirect("List");
         }
         _db.Customers.Remove(item);
         _db.SaveChanges();
-        return Redirect("/Customer");
+        return Redirect("List");
     }
 }

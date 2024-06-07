@@ -2,22 +2,22 @@
 <form action="/Customer/Update/@Model.CustomerId" method="post">
     <div class="mb-3">
         <label class="form-label">Customer Name</label>
-        <input type="text" class="form-control" id="CustomerName" name="Name" value="@Model.CustomerName" />
+        <input type="text" class="form-control" id="CustomerName" name="CustomerName" value="@Model.CustomerName" />
     </div>
     <div class="mb-3">
         <label class="form-label">Phone Number</label>
-        <input type="text" class="form-control" id="PhoneNo" name="Phone" value="@Model.PhoneNo">
+        <input type="text" class="form-control" id="PhoneNo" name="PhoneNo" value="@Model.PhoneNo">
     </div>
     <div class="mb-3">
         <label class="form-label">Date Of Birth</label>
-        <input type="text" class="form-control" id="DateOfBirth" name="DOB" value="@Model.DateOfBirth">
+        <input type="text" class="form-control" id="DateOfBirth" name="DateOfBirth" value="@Model.DateOfBirth">
     </div>
     <div class="mb-3">
-        <label class="form-label">Title</label>
+        <label class="form-label">Gender</label>
         <input type="text" class="form-control" id="Gender" name="Gender" value="@Model.Gender">
     </div>
     <div class="mb-3">
-        <a href="/Customer" class="btn btn-outline-dark">Back</a>
+        <a href="/Customer/List" class="btn btn-outline-dark">Back</a>
         <button type="submit" class="btn btn-success">Update</button>
     </div>
 </form>

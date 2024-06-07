@@ -4,6 +4,7 @@
     int count = 1;
 }
 <h3>Customers</h3>
+<a href="/Customer/Create" class="btn btn-success">New</a>
 <table class="table">
     <thead>
         <tr>
@@ -20,10 +21,10 @@
         {
             <tr>
                 <td>
-                    <a href="Customer/Edit/@item.CustomerId" class="btn btn-outline-warning">Edit</a>
-                    <a href="" Customer /Delete/@item.CustomerId"" class="btn btn-danger">Delete</a>
+                    <a href="/Customer/Edit/@item.CustomerId" class="btn btn-outline-warning">Edit</a>
+                    <a href="/Customer/Delete/@item.CustomerId" class="btn btn-danger">Delete</a>
                 </td>
-                <td scope="row">@(++count)</td>
+                <td scope="row">@(count++)</td>
                 <td scope="row">@item.CustomerName</td>
                 <td scope="row">@item.PhoneNo</td>
                 <td scope="row">@item.DateOfBirth</td>
