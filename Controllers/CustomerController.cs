@@ -71,10 +71,10 @@ public class CustomerController : Controller
         var item = _db.Customers.FirstOrDefault(x => x.CustomerId == id);
         if (item is null)
         {
-            return Redirect("Customer/List");
+            return Redirect("/Customer");
         }
         _db.Customers.Remove(item);
         _db.SaveChanges();
-        return Redirect("Customer/List"); 
+        return Redirect("/Customer/List"); 
     }
 }
