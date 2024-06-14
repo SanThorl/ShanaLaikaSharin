@@ -71,7 +71,7 @@ public class CustomerController : Controller
         var item = _db.Customers.FirstOrDefault(x => x.CustomerId == id);
         if (item is null)
         {
-            return Redirect("/Customer");
+            return Redirect("/Customer/List");
         }
         _db.Customers.Remove(item);
         _db.SaveChanges();
