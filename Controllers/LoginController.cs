@@ -34,7 +34,7 @@ namespace Webmvc.Controllers
 
             await _db.Login.AddAsync(new LoginModel
             {
-                UserId = reqModel.UserId,
+                UserId = item.UserId,
                 SessionId = sessionId,
                 SessionExpired = sessionExpire
             });

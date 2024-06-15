@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Webmvc;
+using Webmvc.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+//app.UseMiddleware<CookieMiddleware>();
+app.UseCookieMiddleware();
 
 app.UseRouting();
 
