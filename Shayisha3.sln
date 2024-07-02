@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiConnectedMvc", "..\We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerApp", "..\CustomerApp\CustomerApp.csproj", "{6417860E-EA9C-4F23-8F4B-D42D4C4900B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorServerApp", "..\BlazorServerApp\BlazorServerApp.csproj", "{D2208498-3D8C-4314-BD96-612B6CD55C25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorServerApp", "..\BlazorServerApp\BlazorServerApp.csproj", "{D2208498-3D8C-4314-BD96-612B6CD55C25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
